@@ -6,5 +6,3 @@
 
 ![Alt text](./dist/1.png)        
 ![Alt text](./dist/2.png)
-
-        

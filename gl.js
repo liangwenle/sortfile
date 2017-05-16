@@ -9,7 +9,6 @@ class T {
   }
 
 
-
   async getAllFiles() {
     let root = this.root;
     let res = [], files = fs.readdirSync(root);
