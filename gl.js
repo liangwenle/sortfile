@@ -12,7 +12,7 @@ class T {
   async getAllFiles() {
     let root = this.root;
     let res = [], files = fs.readdirSync(root);
-    files.map(async(file) => {
+    files.map(async (file) => {
       let pathname = root + '/' + file
         , stat = fs.lstatSync(pathname);
       if (!stat.isDirectory()) {
@@ -31,12 +31,12 @@ class T {
     fs.mkdirSync(dir);
     return dir
   }
-  async hasDir(dirName){
+  async hasDir(dirName) {
     let stat;
     try {
-      stat = fs.lstatSync(this.root + '/' +dirName);
+      stat = fs.lstatSync(this.root + '/' + dirName);
     }
-    catch (e){
+    catch (e) {
       return false
     }
     return stat.isDirectory()
@@ -56,7 +56,7 @@ class T {
     let list = await this.getAllFiles();
 
     //遍历
-    for(let item of list){
+    for (let item of list) {
       let stat = fs.statSync(item);
       let dirName = await this.getDirName(stat);
       console.log(dirName);
@@ -64,14 +64,14 @@ class T {
 
       //判断是否有文件夹
 
-      if(!isDir){
+      if (!isDir) {
         //创建文件夹
         await this.mkDir(dirName);
       }
       let oldPath = item;
-      let f = item.replace(new RegExp(this.root),'');
+      let f = item.replace(new RegExp(this.root), '');
       let newPath = `${this.root}/${dirName}${f}`;
-      console.log(oldPath,newPath);
+      console.log(oldPath, newPath);
       //剪切
       fs.renameSync(oldPath, newPath);
     }
