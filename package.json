@@ -1,6 +1,6 @@
 {
   "name": "sortfile",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "把文件放在文件夹pht目录,分类运行",
   "main": "./lib/gl.js",
   "scripts": {
