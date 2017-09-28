@@ -4,8 +4,8 @@ const fs = require('fs');
 const root_path = process.argv[2];
 
 class T {
-  constructor() {
-    this.root = './pht'
+  constructor(opt) {
+    this.root = opt.root || ''
   }
 
 
@@ -80,5 +80,7 @@ class T {
   }
 }
 
-let t = new T();
-t.init();
+module.exports = T
+
+// let t = new T();
+// t.init();
