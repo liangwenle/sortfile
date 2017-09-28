@@ -1,4 +1,5 @@
 'use strict';
+require("babel-polyfill");
 const fs = require('fs');
 // import fs from "fs";
 const root_path = process.argv[2];
