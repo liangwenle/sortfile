@@ -9,7 +9,6 @@ class T {
     this.root = opt.root || ''
   }
 
-
   async getAllFiles() {
     let root = this.root;
     let res = [], files = fs.readdirSync(root);
@@ -23,9 +22,7 @@ class T {
       }
     });
     return res
-
   }
-
 
   async mkDir(dirName) {
     let dir = `${this.root}/${dirName}`;
