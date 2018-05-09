@@ -4,7 +4,7 @@
   "description": "把文件放在文件夹pht目录,分类运行",
   "main": "./lib/index.js",
   "bin": {
-    "lwl": "./src/bb.js"
+    "lwl": "./bin/lwl.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
