@@ -7,9 +7,9 @@ const SF = require('../src');
 
 
 program.version(require('../package.json').version)
-    .option('-i, --in <file ...>', 'Add peppers')
-    .option('-o, --out <file ...>', 'Add pineapple')
-    .option('-t, --type [value]', 'Add pineapple')
+    .option('-i, --in <file ...>', 'Enter the file path.')
+    .option('-o, --out <file ...>', 'Output file path.')
+    // .option('-t, --type [value]', 'Add pineapple')
     .action((arg, cmd) => {
         console.log(arg)
     })
