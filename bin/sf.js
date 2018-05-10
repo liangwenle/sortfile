@@ -4,8 +4,6 @@ const program = require('commander');
 const fs = require("fs");
 const SF = require('../src');
 
-
-
 program.version(require('../package.json').version)
     .option('-i, --in <file ...>', 'Enter the file path.')
     .option('-o, --out <file ...>', 'Output file path.')
@@ -27,14 +25,6 @@ if (!program.in) {
     process.exit(1);
 
 }
-if (program.out) {
-    // console.log('  - out : ' + program.out);
-}
-if (program.type) {
-    // console.log('  - type : ' + program.type);
-}
-
-
 
 function hasdir(src) {
     return new Promise((resolve, reject) => {
