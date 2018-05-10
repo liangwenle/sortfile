@@ -6,15 +6,17 @@ const root_path = process.argv[2];
 
 class T {
   constructor(opt) {
-    this.root = opt.root || ''
+    this.inSrc = opt.inSrc || '';
+    this.outSrc = opt.outSrc || opt.inSrc;
   }
 
   async getAllFiles() {
-    let root = this.root;
-    let res = [], files = fs.readdirSync(root);
+    let root = this.inSrc,
+      res = [],
+      files = fs.readdirSync(root);
     files.map(async (file) => {
-      let pathname = root + '/' + file
-        , stat = fs.lstatSync(pathname);
+      let pathname = root + '/' + file,
+        stat = fs.lstatSync(pathname);
       if (!stat.isDirectory()) {
         res.push(pathname.replace(root_path, '.'));
       } else {
@@ -25,16 +27,15 @@ class T {
   }
 
   async mkDir(dirName) {
-    let dir = `${this.root}/${dirName}`;
+    let dir = `${this.outSrc}/${dirName}`;
     fs.mkdirSync(dir);
     return dir
   }
   async hasDir(dirName) {
     let stat;
     try {
-      stat = fs.lstatSync(this.root + '/' + dirName);
-    }
-    catch (e) {
+      stat = fs.lstatSync(this.outSrc + '/' + dirName);
+    } catch (e) {
       return false
     }
     return stat.isDirectory()
@@ -47,7 +48,7 @@ class T {
     let day = date.getDate();
     month = month.toString().length < 2 ? ('0' + month) : month;
     day = day.toString().length < 2 ? ('0' + day) : day;
-    return `${year}${month}${day}`;
+    return `${year}_${month}_${day}`;
   }
   async init() {
     // 获取文件列表
@@ -67,8 +68,8 @@ class T {
         await this.mkDir(dirName);
       }
       let oldPath = item;
-      let f = item.replace(new RegExp(this.root), '');
-      let newPath = `${this.root}/${dirName}${f}`;
+      let f = item.replace(new RegExp(this.inSrc), '');
+      let newPath = `${this.outSrc}/${dirName}${f}`;
       console.log(oldPath, newPath);
       //剪切
       fs.renameSync(oldPath, newPath);

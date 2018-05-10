@@ -1,3 +1,3 @@
 let  SF = require('../src');
-let sf = new SF({root:'../tt'})
+let sf = new SF({inSrc:'../tt'})
 sf.init();
