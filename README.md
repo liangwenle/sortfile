@@ -15,15 +15,20 @@ npm i sortfile
 
 cmd
 ```
+
 $ npm i sortfile
 $ sf -i <file ...> -o <file ...>
 
 ```
+
 or by node.js program
+
 ```
+
 let  SF = require('sortfile');
 let sf = new SF({inSrc:'./pht'})
 sf.init();
+
 ```
 
 
