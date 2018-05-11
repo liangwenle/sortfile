@@ -1,6 +1,6 @@
 {
   "name": "sortfile",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "把文件放在文件夹pht目录,分类运行",
   "main": "./lib/index.js",
   "bin": {
