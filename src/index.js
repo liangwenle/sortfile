@@ -72,7 +72,8 @@ class T {
       let newPath = `${this.outSrc}/${dirName}${f}`;
       console.log(oldPath, newPath);
       //剪切
-      fs.renameSync(oldPath, newPath);
+      // fs.renameSync(oldPath, newPath);
+      fs.copyFileSync(oldPath, newPath);
     }
     // list.map(async(item)=>{
     // });
