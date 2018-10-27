@@ -26,10 +26,16 @@ or by node.js program
 ```
 
 let  SF = require('sortfile');
-let sf = new SF({inSrc:'./pht'})
+let sf = new SF({inSrc:'./ontPh',outSrc:'./outPh'})
 sf.init();
 
 ```
+
+run 
+```
+node xxx.js
+```
+
 
 
 ![Alt text](./dist/1.png)
