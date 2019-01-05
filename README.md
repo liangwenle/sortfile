@@ -26,7 +26,7 @@ or by node.js program
 ```
 
 let  SF = require('sortfile');
-let sf = new SF({inSrc:'./ontPh',outSrc:'./outPh'})
+let sf = new SF({inSrc:'./intPh',outSrc:'./outPh'})
 sf.init();
 
 ```
